@@ -21,6 +21,20 @@
     "prettier-standard": "^16.4.1",
     "standard": "^14.3.4"
   },
+  "standard": {
+    "ignore": [
+      "node_modules/",
+      "build/"
+    ],
+    "globals": [
+      "describe",
+      "it",
+      "test",
+      "expect",
+      "afterAll",
+      "jest"
+    ]
+  },
   "lint-staged": {
     "*": [
       "prettier-standard --lint"
