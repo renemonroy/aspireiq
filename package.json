@@ -1,0 +1,12 @@
+{
+  "name": "aspireiq",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:renemonroy/aspireiq.git",
+  "author": "renemonroy <rene.monroy@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["apps/*", "libs/*"],
+  "scripts": {},
+  "devDependencies": {}
+}
