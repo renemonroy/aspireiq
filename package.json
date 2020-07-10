@@ -6,7 +6,12 @@
   "author": "renemonroy <rene.monroy@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["apps/*", "libs/*"],
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
   "scripts": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }
