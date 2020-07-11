@@ -1,4 +1,4 @@
-# AspireIQ - UITagsInput Component
+# AspireIQ - `UITagsInput` Component
 
 > Enters multiple items from a single input field. Can be used for emails, tags, categories or anything similar.
 
