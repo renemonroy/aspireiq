@@ -6,10 +6,16 @@
   "author": "renemonroy <rene.monroy@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "libs/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "libs/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**"
+    ]
+  },
   "scripts": {
     "lint": "standard",
     "format": "prettier-standard --format",
