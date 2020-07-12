@@ -30,7 +30,9 @@ export default function UITagsInput(props: ITagsInputProps): JSX.Element {
   }, [props]);
 
   // Trigger onChange event whenever the tags are updated
-  React.useEffect(() => {}, [tags]);
+  React.useEffect(() => {
+    props.onChange && props.onChange(tags);
+  }, [tags]);
 
   // Handles onChange event of text input element
   function handleInputChange(e: React.FormEvent<HTMLInputElement>): void {
@@ -44,6 +46,13 @@ export default function UITagsInput(props: ITagsInputProps): JSX.Element {
       setInputValue("");
       setTags([...tags, inputValue.trim()]);
     }
+  }
+
+  // Remove a tag item from the component
+  function removeTagItem(index: number): void {
+    const items = [...tags];
+    items.splice(index, 1);
+    setTags(items);
   }
 
   // Focus input when clicking on container element
@@ -68,6 +77,7 @@ export default function UITagsInput(props: ITagsInputProps): JSX.Element {
               }
             >
               {tag}
+              <button onClick={() => removeTagItem(i)}>×</button>
               {props.name && (
                 <input type="hidden" name={`${props.name}[${i}]`}></input>
               )}

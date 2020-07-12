@@ -33,16 +33,36 @@ export const UITagsLabelStyled = styled.label`
 export const UITagStyled = styled.span`
   background-color: ${({ theme }: IProps) => theme.bgColor.transparent};
   border-radius: 6px;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
   font-weight: ${({ theme }: IProps) => theme.fontWeight.bold};
   height: 28px;
   line-height: 28px;
   margin: 0.25rem 0.25rem 0;
   padding: 0 0.5rem;
 
+  button {
+    background-color: transparent;
+    border: 0 none;
+    border-radius: 24px;
+    box-shadow: none;
+    display: none;
+    font-size: ${({ theme }: IProps) => theme.fontSizes.lg};
+    font-weight: ${({ theme }: IProps) => theme.fontWeight.thin};
+    height: 24px;
+    margin-right: -5px;
+    margin-top: 1px;
+    width: 24px;
+  }
+
   &:hover {
     background-color: ${({ theme }: IProps) => theme.bgColor.gray};
     cursor: default;
+
+    button {
+      cursor: pointer;
+      display: block;
+    }
   }
 
   &.invalid,
