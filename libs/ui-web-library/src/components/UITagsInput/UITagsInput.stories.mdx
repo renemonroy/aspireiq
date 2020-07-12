@@ -1,13 +1,87 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
+import UIProvider from "../UIProvider/UIProvider.tsx";
 import UITagsInput from "./UITagsInput";
+import { emailValidation } from "../../utils/validations.ts"
 
-<Meta title="UITagsInput" component={UITagsInput} />
+<Meta
+  title="UITagsInput"
+  component={UITagsInput}
+  decorators={[
+    storyFn => (
+      <UIProvider>
+        <div style={{ margin: "4rem auto", width: "675px" }}>
+          {storyFn()}
+        </div>
+      </UIProvider>
+    )
+  ]}
+/>
 
-# UITagsInput
+## Description
+
+An `UITagsInput` component accepts multiple items from a single input field. It can be used for emails, tags, categories or any item that are part of a same group.
 
 <Preview>
   <Story name="Simple Example">
     <UITagsInput />
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="With Initial Value">
+    <UITagsInput
+      value={["rene@example.com", "lorem@ipsum.com"]}
+    />
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="With label">
+    <UITagsInput label="To:" />
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="With id">
+    <UITagsInput label="To:" id="emails_01" />
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="With \'name\' prop">
+    <UITagsInput label="To:" id="emails_02" name="emails_02" />
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="With email validation">
+    <UITagsInput
+      label="To:"
+      id="emails_03"
+      name="emails_03"
+      validation={emailValidation}
+    />
+  </Story>
+</Preview>
+
+The next example tests the pressing of tab. The expected behavior is to move to the next input element whenever a value is empty.
+
+Note that the **subject** is not styled. That's expected.
+
+<Preview>
+  <Story name="With tabs testing">
+    <div className="container">
+      <UITagsInput
+        label="To:"
+        id="emails_04"
+        name="emails_04"
+        validation={emailValidation}
+      />
+      <div className="subject" style={{ marginTop: "10px" }}>
+        <label htmlFor="subject_04"  style={{ marginRight: "5px" }}>Subject:</label>
+        <input id="subject_04" name="subject_04" />
+      </div>
+    </div>
   </Story>
 </Preview>

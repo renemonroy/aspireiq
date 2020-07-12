@@ -18,6 +18,7 @@
     "@types/node": "^14.0.22",
     "@types/react": "^16.9.42",
     "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
@@ -25,10 +26,10 @@
     "typescript": "^3.9.6"
   },
   "peerDependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "styled-components": "^5.1.1"
+  }
 }
