@@ -41,23 +41,39 @@ function App() {
 
 ## Project Organization
 
-I created a monorepo to set up different web services for AspireIQ. In this case I added an UI Web Library folder to create components.
+I created a monorepo to set up different web services for AspireIQ, to simulate a real scenario where we could have UI and other custom libraries used in the main web app. In this case I created the UI Web Library folder to create the component.
 
 ```
 - apps/
   - aspireiq-web-client/
+    - src/
+      ...
 - libs/
   - ui-web-library/
     - src/
       - components/
         - UITagsInput/
+          - UITagsInput.tsx
+          - UITagsInput.stories.mdx
+          - UITagsInput.styles.ts
+          - UITagsInput.types.ts
+      ...
 ```
 
 ### Installation
 
 To install just run `yarn install` from the root of the project.
 
-Then you can run Storybook by going to `/libs/ui-web-library` and run `yarn start`. It should show a playground similar to this:
+To run the dev server of the simulated web app, you just need to run it with generic `react-scripts` package:
+
+```
+  yarn start
+    Starts the development server.
+```
+
+It will load the UI Library automatically.
+
+If you want you can also run Storybook, to test the library isolated, by going to `/libs/ui-web-library` and run `yarn start` there. It should show a playground similar to this:
 
 ![alt text](https://user-images.githubusercontent.com/106011/87277303-a5e43380-c4a7-11ea-8737-699d6b37295f.png "Storybook")
 
