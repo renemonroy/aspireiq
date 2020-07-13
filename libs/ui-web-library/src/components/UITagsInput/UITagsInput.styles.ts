@@ -31,7 +31,7 @@ export const UITagsLabelStyled = styled.label`
   color: ${({ theme }: IProps) => theme.fontColor.gray};
   font-family: ${({ theme }: IProps) => theme.fontFamily.proximaNova};
   font-style: normal;
-  font-weight: ${({ theme }: IProps) => theme.fontWeight.light};
+  font-weight: ${({ theme }: IProps) => theme.fontWeight.base};
   line-height: 28px;
   padding: 0.25rem 0.5rem 0.25rem 1rem;
 `;
@@ -110,6 +110,7 @@ export const UIInputStyled = styled.input`
   font-size: ${({ theme }: IProps) => theme.fontSizes.sm};
   padding: 0.25rem;
   margin: 0.25rem 0.25rem 0;
+  min-width: 200px;
 
   &:focus {
     outline: none;
