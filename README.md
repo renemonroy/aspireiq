@@ -2,6 +2,8 @@
 
 > Enters multiple items from a single input field. Can be used for emails, tags, categories or anything similar.
 
+![alt text](https://user-images.githubusercontent.com/106011/87285865-aab3e200-c4bd-11ea-8042-ae66e7b372bc.png "Screenshot")
+
 ## Usage
 
 ```jsx
