@@ -1,5 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { IProps } from "../../types/theme.types";
+
+export const bounceRepetition = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+`;
 
 export const UITagsInputStyled = styled.div`
   background-color: ${({ theme }: IProps) => theme.bgColor.white};
@@ -55,6 +61,19 @@ export const UITagStyled = styled.span`
     width: 24px;
   }
 
+  span {
+    background-color: ${({ theme }: IProps) => theme.bgColor.red};
+    border-radius: 14px;
+    color: ${({ theme }: IProps) => theme.fontColor.white};
+    display: none;
+    font-size: ${({ theme }: IProps) => theme.fontSizes.xxxs};
+    text-align: center;
+    height: 14px;
+    line-height: 14px;
+    margin: 7px 0 0 5px;
+    width: 14px;
+  }
+
   &:hover {
     background-color: ${({ theme }: IProps) => theme.bgColor.gray};
     cursor: default;
@@ -65,9 +84,24 @@ export const UITagStyled = styled.span`
     }
   }
 
-  &.invalid,
+  &.invalid {
+    background-color: ${({ theme }: IProps) => theme.bgColor.lightRed};
+
+    span {
+      display: inline-block;
+    }
+  }
+
   &.invalid:hover {
-    background-color: ${({ theme }: IProps) => theme.bgColor.red};
+    background-color: ${({ theme }: IProps) => theme.bgColor.lightRed};
+
+    span {
+      display: none;
+    }
+  }
+
+  &.repeated {
+    animation: 350ms ${bounceRepetition} ease;
   }
 `;
 

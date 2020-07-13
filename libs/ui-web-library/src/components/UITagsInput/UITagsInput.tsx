@@ -1,6 +1,11 @@
 import * as React from "react";
 
-import { ITagsInputProps, TInputValue, TTags } from "./UITagsInput.types";
+import {
+  ITagsInputProps,
+  TInputValue,
+  TTags,
+  TRepeated,
+} from "./UITagsInput.types";
 import {
   UITagsInputStyled,
   UITagsListStyled,
@@ -16,11 +21,17 @@ import {
  * @param {object} props - properties of the component
  * @param {Array<string>} props.value - list of tags as strings
  * @param {string} props.label - text that will appear before the list
+ * @param {string | undefined} props.id - dom identifier
+ * @param {string} props.name - text attr used for forms
+ * @param {function} onChange - event to listen changes on tags list
+ * @param {function} validation - used to test each item entered
+ * @param {boolean} preventRepetition - prevents to add repeated tags
  */
 export default function UITagsInput(props: ITagsInputProps): JSX.Element {
   // Sets a state for the main UITagsInput component
   const [tags, setTags] = React.useState<TTags>(props.value || []);
   const [inputValue, setInputValue] = React.useState<TInputValue>("");
+  const [repeated, setRepeated] = React.useState<TRepeated>("");
 
   const inputElRef = React.useRef<HTMLInputElement>(null);
 
@@ -41,10 +52,21 @@ export default function UITagsInput(props: ITagsInputProps): JSX.Element {
 
   // Handles keydown event of text input element
   function handleInputKeydown(e: React.KeyboardEvent<HTMLInputElement>): void {
+    const tag = inputValue.trim();
     if (["Tab", "Enter", ","].includes(e.key) && inputValue !== "") {
+      if (isRepeated(tag)) {
+        setRepeated(tag);
+        // @TODO: Async/await with delay would be better
+        setTimeout(() => {
+          setRepeated("");
+          inputElRef?.current?.focus();
+        }, 350);
+        return;
+      }
       e.preventDefault();
+      setRepeated("");
       setInputValue("");
-      setTags([...tags, inputValue.trim()]);
+      setTags([...tags, tag]);
     }
   }
 
@@ -61,6 +83,16 @@ export default function UITagsInput(props: ITagsInputProps): JSX.Element {
     inputElRef?.current?.focus();
   }
 
+  // Checks whether a validation exists and validates
+  function isValid(tag: string): boolean {
+    return !props.validation || (props.validation && props.validation(tag));
+  }
+
+  // Validates wheter a tag exists already
+  function isRepeated(tag: string): boolean {
+    return props.preventRepetition === true ? tags.includes(tag) : false;
+  }
+
   return (
     <UITagsInputStyled onClick={handleContainerClick}>
       {props.label && (
@@ -72,11 +104,12 @@ export default function UITagsInput(props: ITagsInputProps): JSX.Element {
         {tags.map((tag, i) => (
           <React.Fragment key={`${tag}-${i}`}>
             <UITagStyled
-              className={
-                props.validation && props.validation(tag) ? "valid" : "invalid"
-              }
+              className={`${isValid(tag) ? "valid" : "invalid"}${
+                repeated === tag ? " repeated" : ""
+              }`}
             >
               {tag}
+              <span>!</span>
               <button onClick={() => removeTagItem(i)}>×</button>
               {props.name && (
                 <input type="hidden" name={`${props.name}[${i}]`}></input>

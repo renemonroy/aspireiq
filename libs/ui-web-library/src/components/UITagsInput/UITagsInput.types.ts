@@ -1,5 +1,6 @@
 export type TInputValue = string;
 export type TTags = Array<string>;
+export type TRepeated = string;
 
 export interface ITagsInputProps {
   id?: string | undefined;
@@ -8,4 +9,5 @@ export interface ITagsInputProps {
   value?: Array<string>;
   onChange?: (tags: TTags) => void;
   validation?: (item: string) => boolean;
+  preventRepetition?: boolean;
 }

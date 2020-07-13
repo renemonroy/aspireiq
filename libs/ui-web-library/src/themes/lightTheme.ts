@@ -5,7 +5,8 @@ export default {
     black: "#000000",
     gray: "#EDEDED",
     darkGray: "#E5E5E5",
-    red: "#F3B7BD",
+    red: "#F1515F",
+    lightRed: "#F3B7BD",
   },
   fontFamily: {
     proximaNova:
@@ -15,6 +16,7 @@ export default {
   },
   fontColor: {
     black: "#1A1818",
+    white: "#FFFFFF",
     gray: "#8F8D91",
   },
   fontWeight: {
@@ -25,6 +27,7 @@ export default {
     bold: 700,
   },
   fontSizes: {
+    xxxs: "0.5rem",
     xxs: "0.625rem",
     xs: "0.75rem",
     sm: "0.875rem",

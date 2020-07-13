@@ -5,10 +5,12 @@ export interface IBgColor {
   gray: string;
   darkGray: string;
   red: string;
+  lightRed: string;
 }
 
 export interface IFontColor {
   black: string;
+  white: string;
   gray: string;
 }
 
@@ -18,6 +20,7 @@ export interface IFontFamilies {
 }
 
 export interface IFontSizes {
+  xxxs: string;
   xxs: string;
   xs: string;
   sm: string;

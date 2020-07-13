@@ -18,8 +18,6 @@ import { emailValidation } from "../../utils/validations.ts"
   ]}
 />
 
-## Description
-
 An `UITagsInput` component accepts multiple items from a single input field. It can be used for emails, tags, categories or any item that are part of a same group.
 
 <Preview>
@@ -82,6 +80,20 @@ Note that the **subject** is not styled. That's expected.
         <label htmlFor="subject_04"  style={{ marginRight: "5px" }}>Subject:</label>
         <input id="subject_04" name="subject_04" />
       </div>
+    </div>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="With prevent repetition">
+    <div className="container">
+      <UITagsInput
+        label="To:"
+        id="emails_05"
+        name="emails_05"
+        validation={emailValidation}
+        preventRepetition={true}
+      />
     </div>
   </Story>
 </Preview>
