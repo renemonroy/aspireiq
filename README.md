@@ -24,7 +24,7 @@ function App() {
 
 ## Install and Run
 
-Just a heads up, because of time I decided to not use Typescript in the web application. Instead, I used Typescript in the UI Web Library, which was where I spent most of the time developing.
+I'm using Typescript only in the UI Web Library, which is where I spent most of the time developing, and not in the web application.
 
 To install just run the command below from the root directory:
 
