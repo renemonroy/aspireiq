@@ -11,14 +11,26 @@ function App() {
   return (
     <form>
       <UITagsInput
-        name="whatever"
-        tags={["hello@world.com", "sup@gmail.com"]}
-        validation={emailValidator}
+        label="To:"
+        id="emails"
+        name="emails"
+        validation={emailValidation}
+        preventRepetition={true}
       />
     </form>
   );
 }
 ```
+
+## Features
+
+- Not limited to emails
+- Prevents repetition of items
+- Supports backspace deletion
+- Can be used with common Form libraries
+- Responsive to some level
+- Supports tabbing to move between form elements
+- Handles id/for attributs for automatic focus
 
 ## Project Organization
 
@@ -42,3 +54,11 @@ I created a monorepo to set up different web services for AspireIQ. In this case
 - Bundler ready for production with tree shaking
 - Handles styles with Emotion
 - `ui-web-library/` ready for more components
+
+### Some Possible Improvements
+
+- Max/min tags limitation
+- Copy/paste multiple tags
+- Left/right addons instead label
+- Icons as props
+- Improve responsiveness or even make it adaptive
