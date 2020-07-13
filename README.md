@@ -28,7 +28,6 @@ function App() {
 - Prevents repetition of items
 - Supports backspace deletion
 - Can be used with common Form libraries
-- Responsive to some level
 - Supports tabbing to move between form elements
 - Handles id/for attributs for automatic focus
 
