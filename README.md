@@ -32,6 +32,14 @@ function App() {
 - Supports tabbing to move between form elements
 - Handles id/for attributs for automatic focus
 
+### Some Possible Improvements
+
+- Max/min tags limitation
+- Copy/paste multiple tags
+- Left/right addons instead label
+- Icons as props
+- Improve responsiveness or even make it adaptive
+
 ## Project Organization
 
 I created a monorepo to set up different web services for AspireIQ. In this case I added an UI Web Library folder to create components.
@@ -46,19 +54,18 @@ I created a monorepo to set up different web services for AspireIQ. In this case
         - UITagsInput/
 ```
 
-### Benefits
+### Features
 
 - Isolated environments for libs and apps (clients)
 - Runs Typescript to enforce type safety
 - Uses Storybook as dev server and for documentations
 - Bundler ready for production with tree shaking
-- Handles styles with Emotion
+- Create styles with CSS-in-JS (styled-components) for smart styles
 - `ui-web-library/` ready for more components
 
 ### Some Possible Improvements
 
-- Max/min tags limitation
-- Copy/paste multiple tags
-- Left/right addons instead label
-- Icons as props
-- Improve responsiveness or even make it adaptive
+- Tests on different levels
+- Automatic deployments to NPM registry and storage service
+- Automatic versioning
+- Dockerize servers
