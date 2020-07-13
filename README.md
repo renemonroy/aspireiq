@@ -31,7 +31,7 @@ function App() {
 - Supports backspace deletion
 - Can be used with common Form libraries
 - Supports tabbing to move between form elements
-- Handles id/for attributs for automatic focus
+- Handles id/for attributes for automatic focus
 
 ### Some Possible Improvements
 
