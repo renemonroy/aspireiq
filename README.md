@@ -2,6 +2,26 @@
 
 > Enters multiple items from a single input field. Can be used for emails, tags, categories or anything similar.
 
+## Usage
+
+```jsx
+import { UITagsInput } from "@aspireiq-renemn/ui-web-library";
+
+function App() {
+  return (
+    <form>
+      <UITagsInput
+        label="To:"
+        id="emails"
+        name="emails"
+        validation={emailValidation}
+        preventRepetition={true}
+      />
+    </form>
+  );
+}
+```
+
 ## Install and Run
 
 Just a heads up, because of time I decided to not use Typescript in the web application. Instead, I used Typescript in the UI Web Library, which was where I spent most of the time developing.
@@ -31,26 +51,6 @@ It will load the UI Library automatically.
 If you want you can also run Storybook, to test the library in isolation, by going to `/libs/ui-web-library` and run `yarn start` there. It should show a playground similar to this:
 
 ![alt text](https://user-images.githubusercontent.com/106011/87277303-a5e43380-c4a7-11ea-8737-699d6b37295f.png "Storybook")
-
-## Usage
-
-```jsx
-import { UITagsInput } from "@aspireiq-renemn/ui-web-library";
-
-function App() {
-  return (
-    <form>
-      <UITagsInput
-        label="To:"
-        id="emails"
-        name="emails"
-        validation={emailValidation}
-        preventRepetition={true}
-      />
-    </form>
-  );
-}
-```
 
 ### Features
 
