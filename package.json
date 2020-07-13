@@ -19,7 +19,9 @@
   "scripts": {
     "lint": "standard",
     "format": "prettier-standard --format",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "build-libs": "lerna run build:libs --stream",
+    "aspireiq-web-client": "yarn workspace aspireiq-web-client start"
   },
   "devDependencies": {
     "lerna": "^3.22.1",

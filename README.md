@@ -60,15 +60,26 @@ I created a monorepo to set up different web services for AspireIQ, to simulate 
       ...
 ```
 
-### Installation
+### Install and Run
 
-To install just run `yarn install` from the root of the project.
+Just a heads up, because of time I decided to not use Typescript in the web application. Instead, I used Typescript in the UI Web Library, which was where I spent most of the time developing.
 
-To run the dev server of the simulated web app, you just need to run it with generic `react-scripts` package:
+To install just run the command below from the root directory:
 
 ```
-  yarn start
-    Starts the development server.
+yarn install
+```
+
+Then build our custom libraries by running (from root directory too):
+
+```
+yarn run build-libs
+```
+
+To start the Web Client's development server run the following script at the root directory:
+
+```
+yarn run web-client
 ```
 
 It will load the UI Library automatically.
@@ -89,6 +100,7 @@ If you want you can also run Storybook, to test the library isolated, by going t
 ### Some Possible Improvements
 
 - Tests on different levels
+- Use Typescript in web app too
 - Make use of Storybook Knobs
 - Automatic deployments to NPM registry and storage service
 - Automatic versioning

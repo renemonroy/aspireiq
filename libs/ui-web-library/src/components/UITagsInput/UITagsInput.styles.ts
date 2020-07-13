@@ -57,7 +57,7 @@ export const UITagStyled = styled.span`
     font-weight: ${({ theme }: IProps) => theme.fontWeight.thin};
     height: 24px;
     margin-right: -5px;
-    margin-top: 1px;
+    margin-top: 3px;
     width: 24px;
   }
 

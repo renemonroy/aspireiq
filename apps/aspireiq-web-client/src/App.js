@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { UIProvider, UITagsInput } from "@aspireiq-renemn/ui-web-library";
+
+import { emailValidation } from "./utils/validations";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UIProvider>
+      <div className="app">
+        <p>Then next input handles multiple emails through tags approach:</p>
+        <UITagsInput
+          label="To:"
+          id="emails_05"
+          name="emails_05"
+          validation={emailValidation}
+          preventRepetition={true}
+        />
+      </div>
+    </UIProvider>
   );
 }
 
