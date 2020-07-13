@@ -22,7 +22,7 @@ function App() {
 }
 ```
 
-## Features
+### Features
 
 - Not limited to emails
 - Prevents repetition of items
@@ -30,6 +30,14 @@ function App() {
 - Can be used with common Form libraries
 - Supports tabbing to move between form elements
 - Handles id/for attributs for automatic focus
+
+### Installation
+
+To install just run `yarn install` from the root of the project.
+
+Then you can run Storybook by moving to `/libs/ui-web-library` and run `yarn start`. It should show a playground like this:
+
+![alt text](https://user-images.githubusercontent.com/106011/87277303-a5e43380-c4a7-11ea-8737-699d6b37295f.png "Storybook")
 
 ### Some Possible Improvements
 
@@ -65,6 +73,7 @@ I created a monorepo to set up different web services for AspireIQ. In this case
 ### Some Possible Improvements
 
 - Tests on different levels
+- Make use of Storybook Knobs
 - Automatic deployments to NPM registry and storage service
 - Automatic versioning
 - Dockerize servers
