@@ -53,7 +53,8 @@ export default function UITagsInput(props: ITagsInputProps): JSX.Element {
   // Handles keydown event of text input element
   function handleInputKeydown(e: React.KeyboardEvent<HTMLInputElement>): void {
     const tag = inputValue.trim();
-    if (["Tab", "Enter", ","].includes(e.key) && inputValue !== "") {
+
+    if (["Tab", "Enter", ","].includes(e.key) && tag !== "") {
       if (isRepeated(tag)) {
         setRepeated(tag);
         // @TODO: Async/await with delay would be better
@@ -67,6 +68,10 @@ export default function UITagsInput(props: ITagsInputProps): JSX.Element {
       setRepeated("");
       setInputValue("");
       setTags([...tags, tag]);
+    }
+
+    if (["Backspace"].includes(e.key) && tags.length > 0 && tag === "") {
+      removeTagItem(-1);
     }
   }
 
